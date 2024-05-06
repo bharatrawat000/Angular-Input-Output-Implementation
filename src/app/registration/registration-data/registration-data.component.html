@@ -1,0 +1,23 @@
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <th>#</th>
+        <th>Name</th>
+        <th>Contact No</th>
+        <th>Email</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of registrationData; let idx = index;">
+            <td>{{ idx+1 }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.contactNo }}</td>
+            <td>{{ item.email }}</td>
+            <td>
+                <button type="button" (click)="onEdit(idx)" class="btn btn-success btn-sm">Edit</button>
+            </td>
+        </tr>
+        <tr *ngIf="registrationData.length==0" align="center">
+            <td colspan="5">No data available</td>
+        </tr>
+    </tbody>
+</table>
